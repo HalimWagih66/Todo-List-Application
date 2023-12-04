@@ -42,7 +42,7 @@ class LoginViewModel extends BaseViewModel<LoginNavigator>{
       FirebaseAuth.instance.sendPasswordResetEmail(email: email);
       navigator.hideDialogLoading();
       navigator.showMessageSnackPar(message: "A message has been sent to your account to change the password please go and change the password");
-    } on Exception catch (e) {
+    } on Exception catch (_) {
       navigator.hideDialogLoading();
       navigator.showMessageSnackPar(message: "This email is not valid, modify it");
     }
