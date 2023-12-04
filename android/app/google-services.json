@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "982870209417",
+    "project_id": "todo-list-7eddb",
+    "storage_bucket": "todo-list-7eddb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982870209417:android:d48096b25aed55a2fe2758",
+        "android_client_info": {
+          "package_name": "com.example.todo_list_application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDexikd6uQlsllyrcTJHz73vLSaJ2H8_PY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

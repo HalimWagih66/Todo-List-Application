@@ -1,0 +1,22 @@
+{
+  "create_account": "Create Account",
+  "full_name": "Full Name",
+  "email_address": "E-mail Address",
+  "password": "Password",
+  "confirm_password": "Confirm Password",
+  "i_already_have_an_account": "I Already Have an Account",
+  "please_enter_Confirm_password": "Please Enter Confirm Password",
+  "this_password_does_not_match_the_main_password": "This password does not match the main password",
+  "please_enter_at_least_the_binary_name": "Please enter at least the binary name",
+  "please_enter_email_address": "Please Enter E-mail Address",
+  "please_enter_the_email_correctly": "Please enter the email correctly",
+  "please_enter_password": "Please Enter Password",
+  "please_enter_a_password_that_is_more_than_6_digits":"Please enter a password that is more than 6 digits",
+  "please_enter_your_name": "Please Enter Your Name",
+  "loading": "Loading...",
+  "login": "Login",
+  "welcome_back": "Welcome Back!",
+  "i_don_t_have_an_account": "I Don't Have an Account",
+  "the_account_already_exists_for_that_email": "The account already exists for that email.",
+  "something_went_error": "something went error"
+}
