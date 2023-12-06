@@ -71,6 +71,7 @@ flutter:
   assets:
     - assets/images/auth/
     - assets/images/auth/continue account/
+    - assets/images/onboarding/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -90,6 +91,9 @@ flutter:
         - asset: assets/fonts/font family/Poppins-Light.ttf
         - asset: assets/fonts/font family/Poppins-Regular.ttf
         - asset: assets/fonts/font family/Poppins-SemiBold.ttf
+    - family: STC
+      fonts:
+        - asset: assets/fonts/STC/STC-Bold.ttf
 
   #
   # For details regarding fonts from package dependencies,
