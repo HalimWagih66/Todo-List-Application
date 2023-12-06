@@ -1,7 +1,7 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:todo_list_application/Features/home%20layout/view/home_layout_view.dart';
 import 'package:todo_list_application/core/base/base_state.dart';
-
 import '../view_model/using_app_view_model.dart';
 
 class OnBoardingView extends StatefulWidget {
@@ -29,7 +29,9 @@ class _OnBoardingViewState extends BaseState<OnBoardingView,OnBoardingViewModel>
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 48.0),
-              child: AnimatedButton(pressEvent: () {  },
+              child: AnimatedButton(pressEvent: () {
+                viewModel.goToScreenAndRemoveUntil(HomeLayout.routeName);
+              },
                 color: const Color(0xff5D9CEC),
               text: "Let's Start",
                 buttonTextStyle: Theme.of(context).textTheme.displayMedium,
@@ -40,7 +42,6 @@ class _OnBoardingViewState extends BaseState<OnBoardingView,OnBoardingViewModel>
       )
     );
   }
-
   @override
   OnBoardingViewModel initViewModel() {
     return OnBoardingViewModel();
