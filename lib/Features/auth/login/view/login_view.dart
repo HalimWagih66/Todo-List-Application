@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -6,8 +7,10 @@ import 'package:todo_list_application/Features/auth/login/view/widget/customFiel
 import 'package:todo_list_application/Features/auth/login/view_model/login_view_model.dart';
 import 'package:todo_list_application/Features/auth/sign_up/view/sign_up_view.dart';
 import 'package:todo_list_application/core/base/base_state.dart';
+import 'package:todo_list_application/core/widget/dialogs/hide_dialog.dart';
 import '../../../../core/functions/validate/validation Email.dart';
 import '../../../../core/widget/TextFormField/custom_form_field.dart';
+import '../../../onboarding/view/using_app_view.dart';
 
 class LoginView extends StatefulWidget {
    const LoginView({super.key});
@@ -24,7 +27,7 @@ class _LoginViewState extends BaseState<LoginView,LoginViewModel>implements Logi
 
   TextEditingController emailController = TextEditingController(text: 'halemwagih6@gmail.com');
 
-  TextEditingController passwordController = TextEditingController(text: "have@gmail.com12345678");
+  TextEditingController passwordController = TextEditingController(text: "HalimWagih44");
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +115,7 @@ class _LoginViewState extends BaseState<LoginView,LoginViewModel>implements Logi
                               ElevatedButton(
                                 onPressed: () async{
                                   if (formKey.currentState?.validate() == false) return;
-                                  await viewModel.login(emailController.text, passwordController.text);
+                                  viewModel.login(emailController.text, passwordController.text);
                                 },
                                 style: ElevatedButton.styleFrom(
                                   padding:
@@ -139,6 +142,9 @@ class _LoginViewState extends BaseState<LoginView,LoginViewModel>implements Logi
                                     onTap: () {
                                       viewModel.goToScreenAndRemoveUntil(SignUpView.routeName);
                                     },
+                                  onLongPress: () {
+                                    viewModel.logout();
+                                  },
                                     child: Center(
                                         child: Text(
                                           AppLocalizations.of(context)!.i_don_t_have_an_account,

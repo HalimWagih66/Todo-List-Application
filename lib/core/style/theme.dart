@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ThemeApp{
   static ThemeData lightTheme = ThemeData(
       primarySwatch: Colors.blue,
-      scaffoldBackgroundColor: Colors.transparent,
+      scaffoldBackgroundColor: const Color(0xffF2F5FF),
       appBarTheme: const AppBarTheme(
         elevation: 0,
         color: Colors.transparent,
@@ -27,6 +27,12 @@ class ThemeApp{
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: Colors.black
+        ),
+        displayMedium: TextStyle(
+          fontSize: 19,
+          fontFamily: "STC",
+          fontWeight: FontWeight.bold,
+          color: Colors.white
         ),
         labelSmall: TextStyle(
             fontFamily: "Poppins",
@@ -73,6 +79,12 @@ class ThemeApp{
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: Colors.white
+          ),
+          displayMedium: TextStyle(
+              fontSize: 17,
+              fontFamily: "STC",
+              fontWeight: FontWeight.bold,
+              color: Colors.black
           ),
         displaySmall: TextStyle(
           color: Colors.white,
