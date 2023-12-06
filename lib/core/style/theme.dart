@@ -34,6 +34,12 @@ class ThemeApp{
           fontWeight: FontWeight.bold,
           color: Colors.white
         ),
+        displayLarge: TextStyle(
+            fontSize: 30,
+            fontFamily: "Ubuntu",
+            fontWeight: FontWeight.w800,
+            color: Colors.white
+        ),
         labelSmall: TextStyle(
             fontFamily: "Poppins",
             fontSize: 15,
