@@ -45,6 +45,7 @@ dependencies:
   flutter_facebook_auth: ^6.0.3
   google_sign_in: ^6.1.6
   twitter_login: ^4.0.1
+  flutter_zoom_drawer: ^3.1.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -72,6 +73,7 @@ flutter:
     - assets/images/auth/
     - assets/images/auth/continue account/
     - assets/images/onboarding/
+    - assets/images/base_images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -87,13 +89,16 @@ flutter:
   fonts:
     - family: Poppins
       fonts:
-        - asset: assets/fonts/font family/Poppins-Bold.ttf
-        - asset: assets/fonts/font family/Poppins-Light.ttf
-        - asset: assets/fonts/font family/Poppins-Regular.ttf
-        - asset: assets/fonts/font family/Poppins-SemiBold.ttf
+        - asset: assets/fonts/Poppins/Poppins-Bold.ttf
+        - asset: assets/fonts/Poppins/Poppins-Light.ttf
+        - asset: assets/fonts/Poppins/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins/Poppins-SemiBold.ttf
     - family: STC
       fonts:
         - asset: assets/fonts/STC/STC-Bold.ttf
+    - family: Ubuntu
+      fonts:
+        - asset: assets/fonts/Ubuntu/Ubuntu-Bold.ttf
 
   #
   # For details regarding fonts from package dependencies,
