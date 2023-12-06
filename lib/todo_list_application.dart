@@ -3,7 +3,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:todo_list_application/Features/auth/continue_account/view/continue_account%20_view.dart';
 import 'package:todo_list_application/Features/auth/login/view/login_view.dart';
-import 'package:todo_list_application/Features/home%20layout/view/home_layout_view.dart';
 import 'package:todo_list_application/Features/onboarding/view/using_app_view.dart';
 import 'package:todo_list_application/core/style/theme.dart';
 import 'Features/auth/sign_up/view/sign_up_view.dart';
@@ -20,10 +19,9 @@ class TodoListApplication extends StatelessWidget {
         SignUpView.routeName:(context)=>const SignUpView(),
         LoginView.routeName:(context)=> const LoginView(),
         ContinueAccount.routeName:(context)=> const ContinueAccount(),
-        OnBoardingView.routeName:(context)=> const OnBoardingView(),
-        HomeLayout.routeName:(context)=> const HomeLayout()
-    },
-      initialRoute: HomeLayout.routeName,
+        OnBoardingView.routeName:(context)=> const OnBoardingView()
+      },
+      initialRoute: LoginView.routeName,
       localizationsDelegates: const [
         AppLocalizations.delegate, // Add this line
         GlobalMaterialLocalizations.delegate,
