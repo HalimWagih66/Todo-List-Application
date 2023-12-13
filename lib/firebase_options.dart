@@ -63,6 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '982870209417',
     projectId: 'todo-list-7eddb',
     storageBucket: 'todo-list-7eddb.appspot.com',
+    androidClientId: '982870209417-nnfn9no3l2btltrb45llmcber0pm5ur4.apps.googleusercontent.com',
+    iosClientId: '982870209417-om3m487voe050ojkv900ms4pquiev25a.apps.googleusercontent.com',
     iosBundleId: 'com.example.todoListApplication',
   );
 }
