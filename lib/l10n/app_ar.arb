@@ -1,13 +1,12 @@
 {
   "create_account": "انشاء حساب",
-  "full_name": "الاسم كامل",
+  "full_name": "الاسم",
   "email_address": "البريد الاكترني",
   "password": "كلمه مرور",
   "confirm_password": "تاكيد كلمه المرور",
   "i_already_have_an_account": "لدي حساب بالفعل",
   "please_enter_Confirm_password": "الرجاء إدخال تأكيد كلمة المرور",
   "this_password_does_not_match_the_main_password": "كلمة المرور هذه لا تتطابق مع كلمة المرور الرئيسية",
-  "please_enter_at_least_the_binary_name": "الرجاء إدخال الاسم الثنائي على الأقل",
   "please_enter_email_address": "الرجاء إدخال عنوان البريد الإلكتروني",
   "please_enter_the_email_correctly": "الرجاء إدخال البريد الإلكتروني بشكل صحيح",
   "please_enter_password": "الرجاء إدخال كلمة المرور",
@@ -18,5 +17,12 @@
   "welcome_back": "مرحباً بك مرة أخرى!",
   "i_don_t_have_an_account": "ليس لدي حساب",
   "something_went_error": "حدث خطأ ما",
-  "the_account_already_exists_for_that_email": "الحساب موجود بالفعل لهذا البريد الإلكتروني."
+  "the_account_already_exists_for_that_email": "الحساب موجود بالفعل لهذا البريد الإلكتروني.",
+  "user_name": "اسم المستخدم",
+  "create_a_password": "انشاء كلمة مرور",
+  "phone_number": "رقم الهاتف",
+  "last_name": "الاسم الاخير",
+  "please_enter_your_first_name_only": "من فضلك ادخل الاسم الاول فقط",
+  "please_enter_your_last_name_only": "من فضلك ادخل الاسم الاخير فقط"
+
 }

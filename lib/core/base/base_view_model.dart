@@ -1,12 +1,13 @@
+
 import 'package:flutter/material.dart';
 import 'base_navigator.dart';
 
 class BaseViewModel<Nav extends BaseNavigator> extends ChangeNotifier{
   late Nav navigator;
-  void goToScreen(String routeName){
-    navigator.pushScreen(routeName);
+  void goToScreen({required String routeName,Object? arg}){
+    navigator.pushScreen(routeName: routeName,arg: arg);
   }
-  void goToScreenAndRemoveUntil(String routeName){
-    navigator.pushScreenAndRemoveUntil(routeName);
+  void goToScreenAndRemoveUntil({required String routeName, Object? arg}){
+    navigator.pushScreenAndRemoveUntil(routeName: routeName,arg: arg);
   }
 }

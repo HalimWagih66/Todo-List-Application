@@ -13,6 +13,7 @@ class CustomFieldPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     LoginViewModel loginViewModel = Provider.of<LoginViewModel>(context);
     return CustomFormField(
+      hintText: "*********",
       textLabel: AppLocalizations.of(context)!.password,
       inputField: passwordController,
       functionValidate: (text) {
@@ -31,7 +32,6 @@ class CustomFieldPassword extends StatelessWidget {
       onPressedSuffixIcon: () {
         loginViewModel.onPressedSuffixIcon();
       },
-      prefixIcon: Icons.password,
       suffixIcon: loginViewModel.eyePassword,
       obscureText: loginViewModel.isHidePassword,
     );

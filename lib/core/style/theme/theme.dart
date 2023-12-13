@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../colors/application_color.dart';
+
 class ThemeApp{
   static ThemeData lightTheme = ThemeData(
-      primarySwatch: Colors.blue,
+      useMaterial3: true,
+      colorSchemeSeed: primaryColor,
       scaffoldBackgroundColor: const Color(0xffF2F5FF),
       appBarTheme: const AppBarTheme(
         elevation: 0,
@@ -20,7 +23,7 @@ class ThemeApp{
             fontWeight: FontWeight.bold,
             fontSize: 24,
             fontFamily: "Poppins",
-            color: Colors.blue
+            color: primaryColor
         ),
         titleMedium: TextStyle(
             fontFamily: "Poppins",
@@ -46,21 +49,31 @@ class ThemeApp{
             fontWeight: FontWeight.w400,
             color: Colors.grey
         ),
-          bodySmall: TextStyle(
-              fontSize: 18,
-              color: Color(0xbb8d8d8d),
-              fontWeight: FontWeight.w600
-          ),
+          // bodySmall: TextStyle(
+          //     fontSize: 18,
+          //     color: Color(0xbb8d8d8d),
+          //     fontWeight: FontWeight.w600
+          // ),
+        bodySmall: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.w600,
+          color: Color(0xff1F1F1F),
+            letterSpacing: 1.2,
+          fontFamily: "Manrope"
+        ),
         displaySmall: TextStyle(
-            color: Colors.black,
-            fontSize: 16,
-            fontWeight: FontWeight.w500
+            fontFamily: "Poppins",
+            fontWeight: FontWeight.normal,
+            letterSpacing: 0.32,
+            fontStyle: FontStyle.normal,
+            fontSize: 17,
+            color: Color(0xff606060)
         ),
       )
   );
 
   static ThemeData darkTheme = ThemeData(
-      primaryColor: Colors.blue,
+      primaryColor: primaryColor,
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: const AppBarTheme(
         elevation: 0,
@@ -78,7 +91,7 @@ class ThemeApp{
             fontWeight: FontWeight.bold,
             fontSize: 24,
             fontFamily: "Poppins",
-            color: Colors.blue
+            color: primaryColor
         ),
           titleMedium: TextStyle(
               fontFamily: "Poppins",

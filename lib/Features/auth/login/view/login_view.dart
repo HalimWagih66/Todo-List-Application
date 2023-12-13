@@ -1,16 +1,14 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_list_application/Features/auth/login/navigator/login_navigator.dart';
 import 'package:todo_list_application/Features/auth/login/view/widget/customFieldPassword.dart';
 import 'package:todo_list_application/Features/auth/login/view_model/login_view_model.dart';
-import 'package:todo_list_application/Features/auth/sign_up/view/sign_up_view.dart';
+import 'package:todo_list_application/Features/auth/sign_up/presentation/view/widget/custom_leading_item.dart';
 import 'package:todo_list_application/core/base/base_state.dart';
-import 'package:todo_list_application/core/widget/dialogs/hide_dialog.dart';
 import '../../../../core/functions/validate/validation Email.dart';
 import '../../../../core/widget/TextFormField/custom_form_field.dart';
-import '../../../onboarding/view/using_app_view.dart';
+import '../../continue_account_with_email/view/continue_with_email_view.dart';
 
 class LoginView extends StatefulWidget {
    const LoginView({super.key});
@@ -27,8 +25,13 @@ class _LoginViewState extends BaseState<LoginView,LoginViewModel>implements Logi
 
   TextEditingController emailController = TextEditingController(text: 'halemwagih6@gmail.com');
 
-  TextEditingController passwordController = TextEditingController(text: "HalimWagih44");
-
+  TextEditingController passwordController = TextEditingController(text: "112233qq");
+   @override
+   void dispose() {
+     passwordController.dispose();
+     emailController.dispose();
+     super.dispose();
+   }
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -36,17 +39,26 @@ class _LoginViewState extends BaseState<LoginView,LoginViewModel>implements Logi
       child: Container(
           decoration: const BoxDecoration(
               color: Color(0xffF2F5FF),
-              image: DecorationImage(
-                image: AssetImage(
-                    "assets/images/auth/background_auth.png"),
-                fit: BoxFit.fill,
-              )),
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+              Color(0xffe9e4f0),
+                  Color(0xff5c76ff),
+                  Color(0xff4863eb),
+              Color(0xff617afd),
+            ]
+            )
+          ),
           child: Scaffold(
             backgroundColor: Colors.transparent,
             appBar: AppBar(
+              leading: CustomLeadingItem(colorIcon: Colors.white,onPressed: (){
+                Navigator.pushReplacementNamed(context, ContinueAccountWithEmailView.routeName,result:  (route) => false);
+              }),
               backgroundColor: Colors.transparent,
               elevation: 0,
-              title: Text(AppLocalizations.of(context)!.login),
+              title: Text(AppLocalizations.of(context)!.login,),
             ),
             body: Container(
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -59,17 +71,16 @@ class _LoginViewState extends BaseState<LoginView,LoginViewModel>implements Logi
                         height: MediaQuery.of(context).size.height * 0.13,
                       ),
                       Card(
-                        color: Colors.white,
-                        elevation: 5,
+                        color: const Color(0xfff1f1f1),
                         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(20),bottomRight: Radius.circular(20),bottomLeft: Radius.circular(20))),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 50,horizontal: 8),
+                          padding: const EdgeInsets.symmetric(vertical: 50,horizontal: 10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
 
                             children: [
                               Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 20),
+                                padding: const EdgeInsets.symmetric(horizontal: 5.0),
                                 child: Text(AppLocalizations.of(context)!.welcome_back,
                                     style: Theme.of(context).textTheme.titleLarge,textAlign: TextAlign.start,),
                               ),
@@ -77,6 +88,7 @@ class _LoginViewState extends BaseState<LoginView,LoginViewModel>implements Logi
                                 height: MediaQuery.of(context).size.height * 0.04,
                               ),
                               CustomFormField(
+                                hintText: "ex: jon.smith@email.com",
                                 textLabel: AppLocalizations.of(context)!.email_address,
                                 inputField: emailController,
                                 functionValidate: (text) {
@@ -93,7 +105,6 @@ class _LoginViewState extends BaseState<LoginView,LoginViewModel>implements Logi
                                         color: Colors.blue,
                                         style: BorderStyle.solid,
                                         width: 2)),
-                                prefixIcon: Icons.email,
                               ),
                               const SizedBox(
                                 height: 15,
@@ -135,22 +146,6 @@ class _LoginViewState extends BaseState<LoginView,LoginViewModel>implements Logi
                                         color: Colors.grey),
                                   ],
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 15),
-                                child: GestureDetector(
-                                    onTap: () {
-                                      viewModel.goToScreenAndRemoveUntil(SignUpView.routeName);
-                                    },
-                                  onLongPress: () {
-                                    viewModel.logout();
-                                  },
-                                    child: Center(
-                                        child: Text(
-                                          AppLocalizations.of(context)!.i_don_t_have_an_account,
-                                          textAlign: TextAlign.center,
-                                          style: Theme.of(context).textTheme.displaySmall?.copyWith(color: Colors.blue),
-                                        ),),),
                               ),
                             ],
                           ),

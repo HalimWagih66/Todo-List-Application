@@ -3,34 +3,35 @@ import 'package:flutter/material.dart';
 import 'package:todo_list_application/core/widget/dialogs/show_loading.dart';
 import 'package:todo_list_application/core/widget/dialogs/show_message.dart';
 import '../widget/dialogs/hide_dialog.dart';
-import '../widget/dialogs/show_message_dialog.dart';
+import '../widget/dialogs/show_message_awesome_dialog.dart';
 import 'base_navigator.dart';
 import 'base_view_model.dart';
 
 abstract class BaseState<T extends StatefulWidget, VM extends BaseViewModel>
     extends State<T> implements BaseNavigator {
   late VM viewModel;
-
   @override
   void initState() {
     super.initState();
     viewModel = initViewModel();
     viewModel.navigator = this;
   }
-
+  @override
+  void dispose() {
+    super.dispose();
+  }
   VM initViewModel();
-
   @override
   void showLoading({String showMessage = "Loading"}) {
     showLoadingDialog(context);
   }
-
   @override
   void showMessageSnackPar({required String message}){
     showMessageWithSnackPar(message: message,context: context);
   }
+
   @override
-  void showResult(
+  void showMessageAwesome(
       {required String message,
       required DialogType dialogType,
       String? title,
@@ -38,7 +39,7 @@ abstract class BaseState<T extends StatefulWidget, VM extends BaseViewModel>
       String? nigActionName,
       Function? posAction,
       String? posActionName}) {
-    showMessageWithDialog(
+    showMessageWithAwesomeDialog(
         context: context,
         message: message,
         dialogType: dialogType,
@@ -50,16 +51,18 @@ abstract class BaseState<T extends StatefulWidget, VM extends BaseViewModel>
     );
   }
 
+
   @override
-  void hideDialogLoading() {
+  void navigatorPop() {
     hideDialog(context);
   }
   @override
-  void pushScreenAndRemoveUntil(String routeName){
-    Navigator.pushReplacementNamed(context, routeName);
+  void pushScreenAndRemoveUntil({required String routeName, Object? arg}){
+    Navigator.pushNamedAndRemoveUntil(context, routeName,arguments: arg,(route) => false);
   }
+
   @override
-  void pushScreen(String routeName){
-    Navigator.pushNamed(context, routeName);
+  void pushScreen({required String routeName, Object? arg}){
+    Navigator.pushNamed(context, routeName,arguments: arg);
   }
 }
